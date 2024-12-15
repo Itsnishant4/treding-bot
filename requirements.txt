@@ -1,2 +1,4 @@
-pip3 install playwright
-playwright install
+playwright==1.49.1
+pyee==12.0.0
+greenlet==1.1.0  # Downgraded to resolve gevent compatibility issues
+requests==2.28.1  # Example, if you are using requests for other HTTP requests
