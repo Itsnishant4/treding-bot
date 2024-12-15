@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playwright Scraping</title>
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/scrape');
+                const data = await response.json();
+                document.getElementById("output").innerText = "Extracted Data: " + data.data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Playwright Data Scraping</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <pre id="output">Data will appear here...</pre>
+</body>
+</html>
